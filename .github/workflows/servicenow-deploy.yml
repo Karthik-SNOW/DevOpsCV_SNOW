@@ -15,7 +15,7 @@ jobs:
 
       - name: Deploy to ServiceNow
         run: |
-          curl --location --request POST "${{ secrets.SERVICENOW_INSTANCE }}/api/now/import/sys_update_set" \
+          curl --location --request POST "${{ secrets.SERVICENOW_INSTANCE }}api/now/table/sys_update_set" \
           --header "Accept: application/json" \
           --header "Content-Type: application/json" \
           --header "Authorization: Basic $(echo -n "${{ secrets.SERVICENOW_USERNAME }}:${{ secrets.SERVICENOW_PASSWORD }}" | base64)" \
