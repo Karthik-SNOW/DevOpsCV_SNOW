@@ -20,6 +20,6 @@ jobs:
           --header "Content-Type: application/json" \
           --header "Authorization: Basic $(echo -n "${{ secrets.SERVICENOW_USERNAME }}:${{ secrets.SERVICENOW_PASSWORD }}" | base64)" \
           --data-raw '{
-              "update_set_xml": "<your_update_set_xml_here>"
+              "update_set_xml": "<VMW_POC>"
           }'
         # replace <your_update_set_xml_here> with a way to get your update set file.
