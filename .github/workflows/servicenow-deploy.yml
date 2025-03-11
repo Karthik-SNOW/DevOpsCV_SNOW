@@ -15,11 +15,11 @@ jobs:
 
       - name: Deploy to ServiceNow
         run: |
-          curl --location --request POST "${{ secrets.SERVICENOW_INSTANCE }}/api/now/import/update_set" \
+          curl --location --request POST "${{ secrets.SERVICENOW_INSTANCE }}/api/now/import/sys_update_set" \
           --header "Accept: application/json" \
           --header "Content-Type: application/json" \
           --header "Authorization: Basic $(echo -n "${{ secrets.SERVICENOW_USERNAME }}:${{ secrets.SERVICENOW_PASSWORD }}" | base64)" \
           --data-raw '{
-              "update_set_xml": "<VMW_POC>"
+              "update_set_xml": "<GitHub>"
           }'
         # replace <your_update_set_xml_here> with a way to get your update set file.
